@@ -1,0 +1,141 @@
+/*****************************
+    GENERAL
+******************************/
+body {
+  background: #fff !important;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.section-title h2 {
+  text-shadow: 1px 1px 2px #4444;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+/*****************************
+    NavBar
+******************************/
+header nav {
+  background: #c1363b !important;
+  box-shadow: 0px 0px 5px #4444;
+}
+header nav a.navbar-brand h2 {
+  color: var(--bs-white);
+}
+header nav ul.action-menu .nav-item .nav-link {
+  margin: 0px 20px;
+  font-size: 18px;
+}
+
+.nav-item:hover,
+.nav-link:hover {
+  color: black !important;
+  box-shadow: #5f5950;
+}
+.nav-item:active,
+.nav-link:active {
+  color: #9695c4 !important;
+}
+
+.navbar-toggler {
+  outline: none !important;
+  outline-color: transparent !important;
+  padding: none !important;
+  border: none !important;
+  border-radius: none !important;
+}
+
+@media (max-width: 567px) {
+  header nav a.navbar-brand h2 {
+    font-size: 14px;
+  }
+}
+/*****************************
+    BODY/CONTENTS
+******************************/
+.scontent {
+  margin-top: 2%;
+  width: 100vw;
+  height: auto;
+  position: sticky;
+  background-color: white;
+}
+
+.pbanner {
+  background-image: url("../home/image2.jpg");
+  background-color: #c1363b;
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding: 10vh;
+  color: white;
+  font-size: 80px;
+  font-weight: bolder;
+  background-size: cover;
+  position: sticky;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.program-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.program-courses {
+  width: 80vw;
+  margin-bottom: 5%;
+}
+
+.program-title {
+  font-size: 60px;
+  background-color: #d12e2e;
+  color: white;
+  padding: 5px 0px 5px 0px;
+  border-radius: 5px;
+}
+
+.program-row {
+  font-size: 40px;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+.program-col {
+  padding: 10px 0px 10px 100px;
+  transition: 1s;
+}
+
+.program-col:hover {
+  padding: 2% 0% 2% 0%;
+  text-align: center;
+}
+
+.program-row:hover {
+  background-color: #db4444;
+  color: white;
+}
+
+/*****************************
+    footer
+******************************/
+.text-reset {
+  text-decoration: none;
+}
+
+.text-reset:hover {
+  color: #6c74c4;
+}
+footer {
+  background-color: #c1363b !important;
+}

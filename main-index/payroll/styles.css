@@ -1,0 +1,138 @@
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  background-image: url("../home/image2.jpg");
+  background-repeat: no-repeat;
+  background-color: rgba(193, 54, 59, 0.7);
+  background-blend-mode: multiply;
+  background-size: cover;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
+h3 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.main-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.row {
+  flex: 1;
+}
+
+.left-panel,
+.right-panel {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.left-panel {
+  flex: 1;
+  background-color: #c1363b;
+}
+.btn-custom {
+  color: white;
+  background-color: #3937a7;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  width: 80%;
+  height: auto;
+}
+
+.btn-custom:hover {
+  color: white;
+  background-color: #6c74c4;
+}
+.btn-link {
+  text-decoration: none;
+}
+.right-panel {
+  flex: 3;
+  background-color: rgba(193, 54, 59, 0.3);
+}
+
+.go-back-btn {
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+table thead {
+  background-color: #c1363b;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(193, 54, 59, 0.822);
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.left-col,
+.right-col {
+  padding-left: 0;
+  padding-right: 0;
+}
+.form-control {
+  margin-bottom: 30px;
+  padding: 15px;
+}
+.input-label {
+  text-align: 15px;
+  font-weight: bold;
+}
+#user-info,
+#deductions,
+.right-panel {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+
+.dropdown-item:hover {
+  background-color: rgba(193, 54, 59, 0.7);
+}
+.delete-row-btn:active {
+  background-color: red;
+}
+.mv:active {
+  background-color: blue;
+}
+.print-btn:active {
+  background-color: greenyellow;
+}
