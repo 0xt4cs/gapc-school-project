@@ -1,5 +1,5 @@
 # testing
-dir_to_ignore/main-index/about
+/main-index/about
 
 # production
 /build
