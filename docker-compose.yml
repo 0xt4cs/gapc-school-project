@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USERNAME=gapc_user
+      - DB_PASSWORD=secure_password_123
+      - DB_NAME=gapc_db
+      - APP_ENV=production
+    volumes:
+      - ./logs:/var/log/apache2
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password_123
+      - MYSQL_DATABASE=gapc_db
+      - MYSQL_USER=gapc_user
+      - MYSQL_PASSWORD=secure_password_123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+volumes:
+  db_data:

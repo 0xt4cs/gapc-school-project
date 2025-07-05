@@ -1,1 +1,50 @@
+# Disable directory browsing
 Options -Indexes
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';"
+</IfModule>
+
+# Protect sensitive files
+<Files ~ "^\.env">
+    Require all denied
+</Files>
+
+<Files ~ "composer\.(json|lock)">
+    Require all denied
+</Files>
+
+<Files ~ "migrate_passwords\.php">
+    Require all denied
+</Files>
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Prevent access to vendor directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^vendor/.*$ - [F,L]
+    RewriteRule ^config/.*$ - [F,L]
+    RewriteRule ^sql/.*$ - [F,L]
+</IfModule>
+
+# PHP Security Settings
+<IfModule mod_php7.c>
+    php_value expose_php Off
+    php_value display_errors Off
+    php_value log_errors On
+</IfModule>
+
+# File Upload Security
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    <IfModule mod_mime.c>
+        SetHandler application/x-httpd-php
+    </IfModule>
+</FilesMatch>

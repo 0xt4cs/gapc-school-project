@@ -1,0 +1,19 @@
+{
+    "name": "gapc/school-project",
+    "description": "Governor Andres Pascual College School Project - Production Ready",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    }
+}

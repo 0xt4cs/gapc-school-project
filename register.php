@@ -1,6 +1,9 @@
   <?php
   session_start();
 
+  // Include secure database configuration for CSRF token generation
+  require_once './config/database.php';
+
   if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
     header("Location: ./main-index/home/");
     exit;
@@ -10,6 +13,9 @@
   if (isset($_SESSION['message'])) {
     unset($_SESSION['message']);
   }
+
+  // Generate CSRF token
+  $csrfToken = generateCSRFToken();
   ?>
 
   <!DOCTYPE html>
@@ -33,6 +39,7 @@
       <div class="register-container">
         <h2>Register</h2>
         <form action="./registration_process.php" method="POST">
+          <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>" />
           <div class="input-group">
             <i class="fas fa-user input-icon"></i>
             <input type="text" name="firstName" placeholder="First Name" required />

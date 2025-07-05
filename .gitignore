@@ -4,6 +4,12 @@
 # production
 /build
 
+# dependencies
+/vendor
+
+# environment
+.env
+
 # misc
 .DS_Store
 .env.local
