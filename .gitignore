@@ -1,5 +1,6 @@
 # testing
 /main-index/about
+test_security.php
 
 # production
 /build
@@ -9,6 +10,9 @@
 
 # environment
 .env
+
+# logs
+/logs
 
 # misc
 .DS_Store

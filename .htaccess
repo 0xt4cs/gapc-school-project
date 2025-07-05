@@ -23,6 +23,15 @@ Options -Indexes
     Require all denied
 </Files>
 
+<Files ~ "test_security\.php">
+    Require all denied
+</Files>
+
+<Files ~ "health-check\.php">
+    # Allow health check access
+    Require all granted
+</Files>
+
 <FilesMatch "^\.">
     Require all denied
 </FilesMatch>

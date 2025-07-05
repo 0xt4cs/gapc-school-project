@@ -37,6 +37,13 @@ function checkUserCredentials($usernameOrEmail, $password)
 if (isset($_POST['username']) && isset($_POST['password'])) {
     session_start();
 
+    // CSRF token validation
+    if (!isset($_POST['csrf_token']) || !validateCSRFToken($_POST['csrf_token'])) {
+        $_SESSION['message'] = "Invalid request. Please try again.";
+        header("Location: ./index.php");
+        exit;
+    }
+
     // Rate limiting - simple implementation
     if (!isset($_SESSION['login_attempts'])) {
         $_SESSION['login_attempts'] = 0;

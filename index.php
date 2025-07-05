@@ -7,10 +7,15 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
 }
 
 require_once './login_process.php';
+require_once './config/database.php';
+
 $message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
 if (isset($_SESSION['message'])) {
   unset($_SESSION['message']);
 }
+
+// Generate CSRF token for login form
+$csrfToken = generateCSRFToken();
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +54,7 @@ if (isset($_SESSION['message'])) {
     <div class="login-container">
       <h2>Login</h2>
       <form id="login-form" action="./login_process.php" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>" />
         <div class="input-group">
           <i class="fas fa-user input-icon"></i>
           <input type="text" name="username" placeholder="Username or Email" required />
