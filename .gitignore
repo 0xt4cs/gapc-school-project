@@ -1,8 +1,18 @@
 # testing
 /main-index/about
+test_security.php
 
 # production
 /build
+
+# dependencies
+/vendor
+
+# environment
+.env
+
+# logs
+/logs
 
 # misc
 .DS_Store
