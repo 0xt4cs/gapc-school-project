@@ -81,8 +81,6 @@ If you're upgrading from the old XAMPP version:
 - Use HTTPS in production environments
 - Regular security updates and monitoring
 - Implement proper backup strategies
-- Monitor application logs for suspicious activity
+- Monitor application logs for suspicious activity\
 
-## 📚 Original Project
-
-This was originally a first-year school project submitted in the 2nd semester of 2022, now enhanced for production use with industry-standard security practices.
+This was originally a first-year school project submitted in the 2nd semester of 2022.
